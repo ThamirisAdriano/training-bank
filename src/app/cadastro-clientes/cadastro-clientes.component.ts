@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms'; 
 
 @Component({
   selector: 'app-cadastro-clientes',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastro-clientes.component.scss']
 })
 export class CadastroClientesComponent implements OnInit {
+  formCadastro: any
+  constructor(private fb:FormBuilder) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit():any {
+    this.formCadastro = this.fb.group ({
+      nome: [''],
+      cpf: [''],
+      email: [''],
+      telefone: [''],
+      endereco: ['']
+    });
   }
-
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  formLogin: any;
+  constructor(private fb:FormBuilder) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit():any {
+    console.log('Component app-header iniciado...')
+    this.formLogin = this.fb.group({
+      cpf: ['']
+    })
   }
 
 }
